@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-5.1.dtd">
+<!-- eric project file for project gaoyiwen -->
+<!-- Saved: 2017-04-23, 11:09:18 -->
+<!-- Copyright (C) 2017 anran_wei, jxfzwar@163.com -->
+<Project version="5.1">
+  <Language>en_US</Language>
+  <Hash>6f47258157dc651219fc0ec442872473498ce94a</Hash>
+  <ProgLanguage mixed="0">Python2</ProgLanguage>
+  <ProjectType>Qt4</ProjectType>
+  <Description>a little game named 'BATTLE OF GAO YI WEN'</Description>
+  <Version>0.1</Version>
+  <Author>anran_wei</Author>
+  <Email>jxfzwar@163.com</Email>
+  <Eol index="0"/>
+  <Sources>
+    <Source>Ui_ui.py</Source>
+    <Source>__init__.py</Source>
+    <Source>ui.py</Source>
+  </Sources>
+  <Forms>
+    <Form>ui.ui</Form>
+  </Forms>
+  <Translations/>
+  <Resources/>
+  <Interfaces/>
+  <Others/>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.e4p" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES"/>
+    <FiletypeAssociation pattern="*.md" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py2" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw2" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.qm" type="TRANSLATIONS"/>
+    <FiletypeAssociation pattern="*.qrc" type="RESOURCES"/>
+    <FiletypeAssociation pattern="*.rst" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.ts" type="TRANSLATIONS"/>
+    <FiletypeAssociation pattern="*.txt" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.ui" type="FORMS"/>
+    <FiletypeAssociation pattern="README" type="OTHERS"/>
+    <FiletypeAssociation pattern="README.*" type="OTHERS"/>
+  </FiletypeAssociations>
+</Project>
