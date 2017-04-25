@@ -2,6 +2,8 @@
 
 import sys
 import os
+import random
+import numpy as np
 
 from PyQt4 import QtGui
 from PyQt4 import QtCore
@@ -32,6 +34,10 @@ class Gao(QtGui.QDialog, Ui_GaoYiWen):
     price2 = 5
     price3 = 10
     price4 = 20
+    originprice1 = 1
+    originprice2 = 5
+    originprice3 = 10
+    originprice4 = 20
     
     level = 1
     PerCostDay = 2
@@ -41,7 +47,6 @@ class Gao(QtGui.QDialog, Ui_GaoYiWen):
     
     day = 1
    
-    
     def __init__(self, parent=None):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
@@ -58,8 +63,8 @@ class Gao(QtGui.QDialog, Ui_GaoYiWen):
         
         self.number1.setText(str(Gao.number1))
         self.number2.setText(str(Gao.number2))
-        self.number2.setText(str(Gao.number2))
-        self.number2.setText(str(Gao.number2))
+        self.number3.setText(str(Gao.number3))
+        self.number4.setText(str(Gao.number4))
         
         self.moneyleft.setText(str('$' + Gao.MoneyPocket))
         self.placeleft.setText(str(Gao.MaximumGood - Gao.GoodNumber))
@@ -68,17 +73,119 @@ class Gao(QtGui.QDialog, Ui_GaoYiWen):
     def on_nextday_clicked(self):
         Gao.day = Gao.day + 1
         
+        if Gao.number1 > 300:
+            seed = random.randint(0, 99)
+            np.random.seed(seed)
+            randompool = random.uniform(0, 1)
+            if randompool > 0.5:
+                lose_1 = random.randint(0, Gao.number1)
+                Gao.number1 = Gao.number1 - lose_1
+                self.lose1.setText(str(lose_1))
+        else:
+            self.lose1.setText('0')
+        if Gao.number2 > 150:
+            seed = random.randint(0, 99)
+            np.random.seed(seed)
+            randompool = random.uniform(0, 1)
+            if randompool > 0.5:
+                lose_2 = random.randint(0, Gao.number2)
+                Gao.number2 = Gao.number2 - lose_2
+                self.lose2.setText(str(lose_2))
+        else:
+            self.lose2.setText('0')
+        if Gao.number3 > 100:
+            seed = random.randint(0, 99)
+            np.random.seed(seed)
+            randompool = random.uniform(0, 1)
+            if randompool > 0.5:
+                lose_3 = random.randint(0, Gao.number3)
+                Gao.number3 = Gao.number3 - lose_3
+                self.lose3.setText(str(lose_3))
+        else:
+            self.lose3.setText('0')
+        if Gao.number4 > 50:
+            seed = random.randint(0, 99)
+            np.random.seed(seed)
+            randompool = random.uniform(0, 1)
+            if randompool > 0.5:
+                lose_4 = random.randint(0, Gao.number4)
+                Gao.number4 = Gao.number4 - lose_4
+                self.lose4.setText(str(lose_4))
+        else:
+            self.lose4.setText('0')
+            
+        if Gao.MoneyPocket >= 500 and Gao.MoneyPocket < 1000:
+            seed = random.randint(0, 99)
+            np.random.seed(seed)
+            randompool = random.uniform(0, 1)
+            if randompool > 0.8:
+                d = round(0.05 * Gao.MoneyPocket, 1)
+                u = round(0.1 * Gao.MoneyPocket, 1)
+                seed = random.randint(0, 99)
+                np.random.seed(seed)
+                losemoney = random.uniform(d, u)
+                Gao.MoneyPocket = Gao.MoneyPocket - losemoney
+                self.losemoney.setText('$' + str(losemoney))
+        elif Gao.MoneyPocket >= 1000 and Gao.MoneyPocket < 2000:
+            seed = random.randint(0, 99)
+            np.random.seed(seed)
+            randompool = random.uniform(0, 1)
+            if randompool > 0.75:
+                d = round(0.2 * Gao.MoneyPocket, 1)
+                u = round(0.4 * Gao.MoneyPocket, 1)
+                seed = random.randint(0, 99)
+                np.random.seed(seed)
+                losemoney = random.uniform(d, u)
+                Gao.MoneyPocket = Gao.MoneyPocket - losemoney
+                self.losemoney.setText('$' + str(losemoney))
+        elif Gao.MoneyPocket >= 2000:
+            seed = random.randint(0, 99)
+            np.random.seed(seed)
+            randompool = random.uniform(0, 1)
+            if randompool > 0.5:
+                d = round(0.3 * Gao.MoneyPocket, 1)
+                u = round(0.6 * Gao.MoneyPocket, 1)
+                seed = random.randint(0, 99)
+                np.random.seed(seed)
+                losemoney = random.uniform(d, u)
+                Gao.MoneyPocket = Gao.MoneyPocket - losemoney
+                self.losemoney.setText('$' + str(losemoney))
+                
+        self.number1.setText(str(Gao.number1))
+        self.number2.setText(str(Gao.number2))
+        self.number3.setText(str(Gao.number3))
+        self.number4.setText(str(Gao.number4))
+                
         price1copy = Gao.price1
         price2copy = Gao.price2
         price3copy = Gao.price3
         price4copy = Gao.price4
         
-        # need to be modified
-        Gao.price1 = Gao.price1
-        Gao.price2 = Gao.price2
-        Gao.price3 = Gao.price3
-        Gao.price4 = Gao.price4
-        
+        seed1 = random.randint(0, 99)
+        np.random.seed(seed1)
+        while True:
+            Gao.price1 = round(np.random.normal(Gao.originprice1, 0.5),1)
+            if Gao.price1 > 0 and Gao.price1 < 2 * Gao.originprice1:
+                break
+        seed2 = random.randint(0, 99)
+        np.random.seed(seed2)
+        while True:
+            Gao.price2 = round(np.random.normal(Gao.originprice2, 1),1)
+            if Gao.price2 > 0 and Gao.price2 < 2 * Gao.originprice2:
+                break
+        seed3 = random.randint(0, 99)
+        np.random.seed(seed3)
+        while True:
+            Gao.price3 = round(np.random.normal(Gao.originprice3, 2),1)
+            if Gao.price3 > 0 and Gao.price3 < 2 * Gao.originprice3:
+                break
+        seed4 = random.randint(0, 99)
+        np.random.seed(seed4)
+        while True:
+            Gao.price4 = round(np.random.normal(Gao.originprice4, 2),1)
+            if Gao.price4 > 0 and Gao.price4 < 2 * Gao.originprice4:
+                break
+                
         Gao.MoneyMarket = Gao.price1 * Gao.number1 + Gao.price2 * Gao.number2 + Gao.price3 * Gao.number3 + Gao.price4 * Gao.number4
         Gao.MoneyPocket = Gao.MoneyPocket - Gao.PerCostDay
         Gao.summoney = Gao.MoneyMarket + Gao.MoneyPocket
@@ -100,7 +207,9 @@ class Gao(QtGui.QDialog, Ui_GaoYiWen):
         self.updown4.setText(str(updown4) + '%')
         
         self.moneyleft_2.setText('$' + str(Gao.MoneyPocket))
+        Gao.GoodNumber = Gao.number1 + Gao.number2 + Gao.number3 + Gao.number4
         self.placeleft_2.setText(str(Gao.MaximumGood - Gao.GoodNumber))
+        self.remainplace.setText(str(Gao.MaximumGood - Gao.GoodNumber ))
         self.moneyleft_3.setText('$' + str(Gao.MoneyMarket))
         self.summoney.setText('$' + str(Gao.summoney))
         
@@ -178,8 +287,8 @@ class Gao(QtGui.QDialog, Ui_GaoYiWen):
         Gao.number4  = Gao.number4 + self.buy4.value() - self.sell4.value()
         self.number1.setText(str(Gao.number1))
         self.number2.setText(str(Gao.number2))
-        self.number2.setText(str(Gao.number2))
-        self.number2.setText(str(Gao.number2))
+        self.number3.setText(str(Gao.number3))
+        self.number4.setText(str(Gao.number4))
         
     @QtCore.pyqtSignature("")
     def on_levelok_clicked(self):
