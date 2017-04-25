@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Tasks SYSTEM "Tasks-6.0.dtd">
 <!-- eric6 tasks file for project gaoyiwen -->
-<!-- Saved: 2017-04-24, 23:02:11 -->
+<!-- Saved: 2017-04-25, 11:39:19 -->
 <Tasks version="6.0">
   <ProjectScanFilter></ProjectScanFilter>
-  <Task priority="1" completed="False" type="1" uid="{bf6b3dde-a911-4ca0-94a4-6ae8d707181c}">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2017-04-24, 23:01:11</Created>
-    <Resource>
-      <Filename>ui.py</Filename>
-      <Linenumber>42</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1" uid="{55a70815-9d77-44a5-a1fa-4fd9ee3fca37}">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2017-04-24, 23:01:11</Created>
-    <Resource>
-      <Filename>ui.py</Filename>
-      <Linenumber>50</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1" uid="{605eca1e-d7b1-4026-aac8-f88558564f47}">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2017-04-24, 23:01:11</Created>
-    <Resource>
-      <Filename>ui.py</Filename>
-      <Linenumber>146</Linenumber>
-    </Resource>
-  </Task>
 </Tasks>
